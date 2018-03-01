@@ -30,10 +30,7 @@ subprojects {
         jcenter()
     }
 
-    jar {
-    baseName = 'app'
-    version = '0.0.1'
-}
+
 
     dependencies {
         compile("org.springframework.boot:spring-boot-starter-security")
