@@ -10,8 +10,6 @@ public class Life {
     public int collonnes;
     public boolean[][] world;
     public long generation;
-    public static final String FILENAME = "C:\\Users\\Nassim\\Documents\\JEE\\cours-jee-7-jpa-master\\tp-display-quote-v4-java\\src\\main\\java\\fr\\isima\\files\\dojo.txt";
-
 
     public void Life(){
         lignes = 0;
@@ -20,8 +18,9 @@ public class Life {
         generation = 0;
     }
 
-    public void createNewWorld() throws IOException {
+    public void createNewWorld(String FILENAME) throws IOException {
         FileReader fileReader = new FileReader(FILENAME);
+        System.out.println(System.getProperty("user.dir"));
         BufferedReader br =  new BufferedReader(fileReader);
         String line;
         line=br.readLine();
@@ -37,17 +36,11 @@ public class Life {
 
         while((line = br.readLine()) != null) {
 
-            for(int j =0;j<collonnes;j++)
-            {
-                if(line.charAt(j)=='.')
-                {
-                    world[i][j]=false;
-                }
-                else
-                {
-                    System.out.println("dfjvfij");
-                    System.out.println(line.charAt(j));
-                    world[i][j]=true;
+            for (int j = 0; j < collonnes; j++) {
+                if (line.charAt(j) == '.') {
+                    world[i][j] = false;
+                } else {
+                    world[i][j] = true;
                 }
             }
             i++;
@@ -114,10 +107,6 @@ public class Life {
 
     public long getGeneration() {
         return generation;
-    }
-
-    public static String getFILENAME() {
-        return FILENAME;
     }
 }
 

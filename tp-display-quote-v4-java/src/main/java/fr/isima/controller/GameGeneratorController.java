@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/main")
-public class GameOfLifeController {
+@RequestMapping("/gameGenerator")
+public class GameGeneratorController {
 
     @GetMapping
-    public ModelAndView game() {
-        return new ModelAndView("gameoflife");
+    public ModelAndView gameGenerator() {
+        return new ModelAndView("gameGenerator");
     }
 }

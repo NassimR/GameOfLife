@@ -8,20 +8,16 @@ import fr.isima.business.ManageLife;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/lifing")
+@RequestMapping(value = "/api/games/{gameId}/generation", method = RequestMethod.GET)
 public class LifeRestController {
 
     public Life life;
 
-
     @GetMapping("{generationNumber}")
-    public Life lifing(@PathVariable Integer generationNumber) throws IOException {
+    public Life lifing(@PathVariable("gameId") int gameId, @PathVariable Integer generationNumber) throws IOException {
         life = new Life();
-        life.createNewWorld();
-       //life.nextGeneration();
-        //life.nextGeneration();
+        life.createNewWorld("./tp-display-quote-v4-java/src/main/java/fr/isima/files/" + gameId + ".txt");
         ManageLife.generation(life,generationNumber);
         return life;
-
     }
 }

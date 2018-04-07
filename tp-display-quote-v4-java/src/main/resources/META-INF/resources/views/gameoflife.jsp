@@ -4,46 +4,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Game of Life</title>
-    <script type="text/javascript"
-        src="${pageContext.request.contextPath}/js/jquery-2.2.0.js"></script>
-    <script type="text/javascript"
-        src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Game of Life</title>
+        <script type="text/javascript" src="/resources/js/jquery-2.2.0.js"></script>
+        <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css"
-        href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
+
     <body>
         <div class="container">
-            <div class="jumbotron">
-
-
-                <p>Game of Life</p>
-
-
-
-                <!-- <h1>Citation <span id="number"><c:if test="${quote.number > 0}">${quote.number}</c:if></span></h1>
-                <p class="lead" style="height: 150px">
-                    <span id="content">${quote.content}</span> <br /> <span
-                        style="font-style: italic;" id="author">${quote.author}</span>
-                </p>
-
-                <p>
+             <div class="row">
+                <div class="col-md-3"><h2>Game of Life</h2></div>
+                <div class="col-md-1">
                     <div class="btn-group" role="group">
-                        <c:forEach items="${quote.directions}" var="direction">
-                          <button type="button" class="btn btn-lg btn-success direction-button" id="${direction.id}"
-                                targetIndex="${direction.indexOfDirection}" enabled="${direction.enabled}">${direction.targetLabel}</button>
-                        </c:forEach>
+                        <button type="button" class="btn btn-default">Play the life</button>
                     </div>
-                </p> -->
-
-
-
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group" role="group">
+                        <button id="uploadInput" type="file" class="btn btn-default">Upload a model</button>
+                        <button id="downloadInput" class="btn btn-default" type="button">Download:</button>
+                        <input id="gameIdInput" type="text" style="width:100px" class="form-control" placeholder="gameId" value="1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group" role="group">
+                      <button id="playGen" type="button" class="btn btn-default">Play the life</button>
+                      <button id="pauseGen" type="button" class="btn btn-default" style="display:none;">Pause the life</button>
+                      <button id="nextGen" type="button" class="btn btn-default">Evolve</button>
+                      <button id="currGen" type="button" disabled class="btn btn-default">1</button>
+                      <button id="prevGen" type="button" class="btn btn-default">De-evolve</button>
+                    </div>
+                </div>
             </div>
+
+            <center>
+                <div id='gamePanel'>
+                </div>
+            </center>
         </div>
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/quotes.js"></script>
+        <script type="text/javascript" src="/resources/js/game.js"></script>
+
     </body>
 </html>
