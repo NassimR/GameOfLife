@@ -1,5 +1,7 @@
 # Jeu de la vie en JEE
 
+Réalisé par Nassim Rahmani et Loïc Sénéchal
+
 ## Introduction
 
 Nous avons réalisé ce projet de Jeu de la Vie sur le Web pendant nos études dans un but éducatif en JEE.
